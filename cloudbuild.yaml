@@ -4,6 +4,6 @@ steps:
   - name: 'mirror.gcr.io/library/golang'
     args: ['go', 'test']
     dir: 'faas'
-  - name: 'gcr.io/cloud-builders/gcloud@sha256:4ea77d19d7336d5a8dc4ae0e609d7f5b45fca067c34b70d7ed6740af229392c6'
+  - name: 'gcr.io/cloud-builders/gcloud'
     args: ['functions', 'deploy', 'faascicd42', '--region', 'europe-west1', 'add-iam-policy-binding', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker', '--trigger-http', '--runtime', 'go113', '--entry-point', 'HelloWorld']
     dir: 'faas'
