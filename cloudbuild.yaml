@@ -8,4 +8,4 @@ steps:
     args: ['functions', 'deploy', 'faascicd420', '--region', 'europe-west1', '--trigger-http', '--runtime', 'go113', '--entry-point', 'HelloWorld']
     dir: 'faas'
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'add-iam-policy-binding', 'faascicd420', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker']
+    args: ['functions', 'add-iam-policy-binding', 'faascicd420', '--region', 'europe-west1', '--member', 'allUsers', '--role', 'roles/cloudfunctions.invoker']
